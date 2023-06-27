@@ -1,5 +1,6 @@
-const express = require('express')
-const app = express()
+const express = require('express');
+const fetch = require('node-fetch');
+const app = express();
 
 function sendWebhookMessage(message) {
     // Replace <WEBHOOK_URL> with the actual URL of your webhook
