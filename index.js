@@ -36,7 +36,7 @@ app.all('/dumps', (req, res) => {
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone DUMPS PURCHASE"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
@@ -47,7 +47,7 @@ app.all('/rdp', (req, res) => {
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone RDP PURCHASE"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
@@ -58,7 +58,7 @@ app.all('/proxy', (req, res) => {
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone PROXY PURCHASE"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
@@ -69,7 +69,7 @@ app.all('/software', (req, res) => {
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SOFTWARE PURCHASE"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
@@ -80,7 +80,7 @@ app.all('/app', (req, res) => {
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone APP PURCHASE"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
@@ -91,121 +91,121 @@ app.all('/app', (req, res) => {
 
 
 app.all('/option1', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 1");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 1"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option2', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 2");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone 2"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option3', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 3");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 3"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option4', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 4");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 4"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option5', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 5");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 5"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option6', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 6");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 6"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option7', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 7");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 7"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option8', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 8");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 8"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option9', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 9");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 9"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option10', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 10");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 10"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 app.all('/option11', (req, res) => {
-    console.log("REQUEST DETECTED : RDP PURCHASE");
+    console.log("REQUEST DETECTED : SELECTED OPTION 11");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "@everyone SELECTED OPTION 11"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
@@ -219,7 +219,7 @@ app.all('/balance', (req, res) => {
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "Some message you want to send"
+        content: "BALANCE REQUEST MADE"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESSFUL REQUEST');
