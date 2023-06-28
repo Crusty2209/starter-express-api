@@ -1,5 +1,5 @@
 const express = require('express');
-const fetch = require('node-fetch');
+const fetch = require('node-fetch').default;
 const app = express();
 
 function sendWebhookMessage(message) {
