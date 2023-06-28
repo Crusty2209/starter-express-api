@@ -52,7 +52,7 @@ app.all('/rdp', (req, res) => {
 app.all('/proxy', (req, res) => {
     console.log("REQUEST DETECTED : PROXY PURCHASE");
     const message = {
-      text: 'PURCHASED PROXY'
+      content: 'PURCHASED PROXY'
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
