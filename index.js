@@ -219,7 +219,7 @@ app.all('/balance', (req, res) => {
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "<@everyone> Some message you want to send"
+        content: "Some message you want to send"
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESSFUL REQUEST');
