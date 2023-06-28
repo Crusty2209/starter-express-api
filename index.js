@@ -185,7 +185,7 @@ app.all('/option11', (req, res) => {
 app.all('/balance', (req, res) => {
     console.log("REQUEST DETECTED : BALANCE REQUEST");
     const message = {
-      text: 'Requested balance'
+      content: 'Requested balance'
     };
     sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
