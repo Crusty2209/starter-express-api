@@ -1,7 +1,6 @@
 const express = require('express');
 const app = express();
-const { default: fetch } = await import('./node_modules/node-fetch');
-fetch();
+import * as fetch from "node-fetch";
 
 function sendWebhookMessage(message) {
     
