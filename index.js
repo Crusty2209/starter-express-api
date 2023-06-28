@@ -1,9 +1,8 @@
 const express = require('express');
 const app = express();
-import * as fetch from "node-fetch";
 
-function sendWebhookMessage(message) {
-    
+async function sendWebhookMessage(message) {
+    const fetch = await import('node-fetch');
     // Replace <WEBHOOK_URL> with the actual URL of your webhook
     const webhookUrl = "https://discord.com/api/webhooks/1123331049166995628/V73549NwP-nIeJROXA2ADaZTe36h2xkxbdmP7N4OB8tSyLL34rHaP0ggI44s-vs9oBA-";
   
