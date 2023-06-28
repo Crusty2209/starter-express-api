@@ -183,14 +183,14 @@ app.all('/option11', (req, res) => {
 
 
 app.all('/balance', (req, res) => {
-    console.log("REQUEST DETECTED : BALANCE REQUEST");
+    console.log("REQUEST DETECTED - BALANCE REQUEST");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960430376172544020/IMG_0022.png",
         content: "Some message you want to send"
     };
     sendWebhookMessage(message);
-    res.send('API : SUCCESS REQUEST');
+    res.send('API : SUCCESSFUL REQUEST');
 });
 
 app.listen(process.env.PORT || 3000)
