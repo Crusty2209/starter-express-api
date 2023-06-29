@@ -1,6 +1,30 @@
 const express = require('express');
 const app = express();
 
+
+async function sendWebhookMessage(message) {
+    const { default: fetch } = await import('node-fetch');
+    const webhookUrl = "https://discord.com/api/webhooks/1123331049166995628/V73549NwP-nIeJROXA2ADaZTe36h2xkxbdmP7N4OB8tSyLL34rHaP0ggI44s-vs9oBA-";
+  
+    try {
+      const response = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(message)
+      });
+  
+      if (response.ok) {
+        console.log('Message sent to the webhook successfully.');
+      } else {
+        console.error('Error sending message to the webhook:', response.status);
+      }
+    } catch (error) {
+      console.error('Error sending message to the webhook:', error);
+    }
+  }
+  /*
 async function sendWebhookMessage(message) {
     const { default: fetch } = await import('node-fetch');
     // Replace <WEBHOOK_URL> with the actual URL of your webhook
@@ -24,7 +48,7 @@ async function sendWebhookMessage(message) {
       console.error('Error sending message to the webhook:', error);
     });
 }
-
+*/
 
 app.all('/', (req, res) => {
     console.log("REQUEST DETECTED")
