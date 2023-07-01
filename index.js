@@ -63,7 +63,7 @@ app.all('/dumps', async (req, res) => {
         content: "@everyone DUMPS PURCHASE"
     };
     await sendWebhookMessage(message);
-    res.send('API : SUCCESS REQUEST');
+    res.send('200');
 });
 
 app.all('/rdp', (req, res) => {
