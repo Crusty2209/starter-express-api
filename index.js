@@ -55,14 +55,14 @@ app.all('/', (req, res) => {
     res.send('API : SUCCESS REQUEST')
 })
 
-app.all('/dumps', (req, res) => {
+app.all('/dumps', async (req, res) => {
     console.log("REQUEST DETECTED : DUMPS PURCHASE");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone DUMPS PURCHASE"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
