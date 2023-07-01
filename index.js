@@ -66,47 +66,47 @@ app.all('/dumps', async (req, res) => {
     res.send('200');
 });
 
-app.all('/rdp', (req, res) => {
+app.all('/rdp', async (req, res) => {
     console.log("REQUEST DETECTED : RDP PURCHASE");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone RDP PURCHASE"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/proxy', (req, res) => {
+app.all('/proxy', async (req, res) => {
     console.log("REQUEST DETECTED : PROXY PURCHASE");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone PROXY PURCHASE"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/software', (req, res) => {
+app.all('/software', async (req, res) => {
     console.log("REQUEST DETECTED : SOFTWARE PURCHASE");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SOFTWARE PURCHASE"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/app', (req, res) => {
+app.all('/app', async (req, res) => {
     console.log("REQUEST DETECTED : APP PURCHASE");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone APP PURCHASE"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
@@ -114,138 +114,138 @@ app.all('/app', (req, res) => {
 
 
 
-app.all('/option1', (req, res) => {
+app.all('/option1', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 1");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 1"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option2', (req, res) => {
+app.all('/option2', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 2");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone 2"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option3', (req, res) => {
+app.all('/option3', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 3");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 3"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option4', (req, res) => {
+app.all('/option4', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 4");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 4"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option5', (req, res) => {
+app.all('/option5', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 5");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 5"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option6', (req, res) => {
+app.all('/option6', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 6");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 6"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option7', (req, res) => {
+app.all('/option7', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 7");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 7"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option8', (req, res) => {
+app.all('/option8', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 8");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 8"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option9', (req, res) => {
+app.all('/option9', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 9");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 9"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option10', (req, res) => {
+app.all('/option10', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 10");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 10"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
-app.all('/option11', (req, res) => {
+app.all('/option11', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 11");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "@everyone SELECTED OPTION 11"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESS REQUEST');
 });
 
 
 
 
-app.all('/balance', (req, res) => {
+app.all('/balance', async (req, res) => {
     console.log("REQUEST DETECTED : BALANCE REQUEST");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
         content: "BALANCE REQUEST MADE"
     };
-    sendWebhookMessage(message);
+    await sendWebhookMessage(message);
     res.send('API : SUCCESSFUL REQUEST');
 });
 
