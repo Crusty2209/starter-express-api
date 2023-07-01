@@ -1,37 +1,6 @@
 const express = require('express');
 const app = express();
-const sqlite3 = require('sqlite3').verbose();
 
-
-
-const db = new sqlite3.Database('users.db');
-
-// Create the users table if it doesn't exist
-db.run(`CREATE TABLE IF NOT EXISTS users (
-  id INTEGER PRIMARY KEY AUTOINCREMENT,
-  username TEXT,
-  password TEXT
-)`);
-
-// Middleware to parse JSON bodies
-app.use(express.json());
-
-app.post('/register', (req, res) => {
-    const { username, password } = req.body;
-  
-    // Hash the password using MD5 (not recommended for production)
-    const hashedPassword = md5Hash(password);
-  
-    // Save the user data in the database
-    db.run('INSERT INTO users (username, password) VALUES (?, ?)', [username, hashedPassword], (err) => {
-      if (err) {
-        console.error(err);
-        res.status(500).send('Error registering user');
-      } else {
-        res.send('User registered successfully!');
-      }
-    });
-  });
 
 async function sendWebhookMessage(message) {
     const { default: fetch } = await import('node-fetch');
@@ -280,9 +249,14 @@ app.all('/balance', async (req, res) => {
     res.send('API : SUCCESSFUL REQUEST');
 });
 
-app.all('/login', (req, res) => {
-    console.log("USERLOGIN");
-    
+app.all('/login', async (req, res) => {
+    console.log("REQUEST DETECTED : BALANCE REQUEST");
+    const message = {
+        username: "UGMARKET",
+        avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
+        content: "BALANCE REQUEST MADE"
+    };
+    await sendWebhookMessage(message);
     res.send('API : SUCCESSFUL REQUEST');
 });
 
