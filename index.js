@@ -235,6 +235,61 @@ app.all('/option11', async (req, res) => {
     res.send('API : SUCCESS REQUEST');
 });
 
+app.all('/25', async (req, res) => {
+    console.log("REQUEST DETECTED : AMOUNT 25");
+    const message = {
+        username: "UGMARKET",
+        avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
+        content: "@everyone SELECTED AMOUNT 25"
+    };
+    await sendWebhookMessage(message);
+    res.send('API : SUCCESS REQUEST');
+});
+
+app.all('/50', async (req, res) => {
+    console.log("REQUEST DETECTED : AMOUNT 50");
+    const message = {
+        username: "UGMARKET",
+        avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
+        content: "@everyone SELECTED AMOUNT 50"
+    };
+    await sendWebhookMessage(message);
+    res.send('API : SUCCESS REQUEST');
+});
+
+app.all('/75', async (req, res) => {
+    console.log("REQUEST DETECTED : AMOUNT 75");
+    const message = {
+        username: "UGMARKET",
+        avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
+        content: "@everyone SELECTED AMOUNT 75"
+    };
+    await sendWebhookMessage(message);
+    res.send('API : SUCCESS REQUEST');
+});
+
+app.all('/100', async (req, res) => {
+    console.log("REQUEST DETECTED : AMOUNT 100");
+    const message = {
+        username: "UGMARKET",
+        avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
+        content: "@everyone SELECTED AMOUNT 100"
+    };
+    await sendWebhookMessage(message);
+    res.send('API : SUCCESS REQUEST');
+});
+
+app.all('/150', async (req, res) => {
+    console.log("REQUEST DETECTED : AMOUNT 150");
+    const message = {
+        username: "UGMARKET",
+        avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
+        content: "@everyone SELECTED AMOUNT 150"
+    };
+    await sendWebhookMessage(message);
+    res.send('API : SUCCESS REQUEST');
+});
+
 
 
 
