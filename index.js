@@ -5,6 +5,9 @@ const crypto = require('crypto');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
+let balance = "0.00";
+
+
 function sanitizeInput(inputValue) {
     // Basic input sanitization to prevent SQL injection
     const sanitizedValue = inputValue.replace(/'/g, '').replace(/"/g, '');
@@ -46,7 +49,7 @@ async function sendWebhookMessage(message) {
     } catch (error) {
       console.error('Error sending message to the webhook:', error);
     }
-  }
+}
 
 app.all('/', (req, res) => {
     console.log("REQUEST DETECTED")
@@ -291,7 +294,7 @@ app.all('/150', async (req, res) => {
 
 
 
-app.all('/balance', async (req, res) => {
+app.get('/balance', async (req, res) => {
     console.log("REQUEST DETECTED : BALANCE REQUEST");
     const message = {
         username: "UGMARKET",
@@ -299,8 +302,23 @@ app.all('/balance', async (req, res) => {
         content: "BALANCE REQUEST MADE"
     };
     await sendWebhookMessage(message);
-    res.send('API : SUCCESSFUL REQUEST');
+    res.json({ balance });
 });
+
+app.post('/balance', (req, res) => {
+    const action = req.body.action;
+    const amount = req.body.amount;
+  
+    if (action === 'add') {
+      balance += amount;
+    } else if (action === 'subtract') {
+      balance -= amount;
+    }
+  
+    res.json({ balance });
+});
+  
+  
 
 app.all('/login', async (req, res) => {
     console.log("REQUEST DETECTED : BALANCE REQUEST");
