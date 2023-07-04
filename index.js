@@ -2,6 +2,12 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop/');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+  });
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
