@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let balance = "999999";
+let balance = 999999;
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop', 'https://ug-mkt-live.glitch.me');
