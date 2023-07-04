@@ -1,6 +1,29 @@
 const express = require('express');
-const app = express();
+const bodyParser = require('body-parser');
+const crypto = require('crypto');
 
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));
+
+function sanitizeInput(inputValue) {
+    // Basic input sanitization to prevent SQL injection
+    const sanitizedValue = inputValue.replace(/'/g, '').replace(/"/g, '');
+    return sanitizedValue;
+}
+
+app.post('/md5', (req, res) => {
+    const { value } = req.body;
+    if (!value) {
+      return res.status(400).send("Error: 'value' parameter is missing in the request");
+    }
+  
+    const sanitizedValue = sanitizeInput(value);
+  
+    // Calculate MD5 hash
+    const md5Hash = crypto.createHash('md5').update(sanitizedValue).digest('hex');
+  
+    res.send(md5Hash);
+});
 
 async function sendWebhookMessage(message) {
     const { default: fetch } = await import('node-fetch');
@@ -24,31 +47,6 @@ async function sendWebhookMessage(message) {
       console.error('Error sending message to the webhook:', error);
     }
   }
-  /*
-async function sendWebhookMessage(message) {
-    const { default: fetch } = await import('node-fetch');
-    // Replace <WEBHOOK_URL> with the actual URL of your webhook
-    const webhookUrl = "https://discord.com/api/webhooks/1123331049166995628/V73549NwP-nIeJROXA2ADaZTe36h2xkxbdmP7N4OB8tSyLL34rHaP0ggI44s-vs9oBA-";
-  
-    fetch(webhookUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(message)
-    })
-    .then(response => {
-      if (response.ok) {
-        console.log('Message sent to the webhook successfully.');
-      } else {
-        console.error('Error sending message to the webhook:', response.status);
-      }
-    })
-    .catch(error => {
-      console.error('Error sending message to the webhook:', error);
-    });
-}
-*/
 
 app.all('/', (req, res) => {
     console.log("REQUEST DETECTED")
