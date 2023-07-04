@@ -2,17 +2,16 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
 
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop/');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    next();
-  });
-
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let balance = "0.00";
 
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop/');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    next();
+});
 
 function sanitizeInput(inputValue) {
     // Basic input sanitization to prevent SQL injection
