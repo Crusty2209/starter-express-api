@@ -310,7 +310,7 @@ app.get('/balance', async (req, res) => {
     res.json({ balance });
 });
 
-app.post('/balance', (req, res) => {
+app.post('/balance_edit', (req, res) => {
     const action = req.body.action;
     const amount = req.body.amount;
   
