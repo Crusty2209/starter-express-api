@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 let balance = "0.00";
 
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop/');
+    res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop/', 'https://ug-mkt-live.glitch.me/');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     next();
 });
