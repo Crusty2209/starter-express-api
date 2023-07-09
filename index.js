@@ -314,7 +314,8 @@ app.get('/balance', async (req, res) => {
 app.post('/balance_edit', (req, res) => {
     const action = req.body.action;
     const amount = req.body.amount;
-  
+    console.log(action);
+    console.log(amount);
     if (action === 'add') {
       balance += amount;
       res.send("added amount");
