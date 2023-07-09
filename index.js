@@ -318,12 +318,12 @@ app.post('/balance_edit', (req, res) => {
     if (action === 'add') {
       balance += amount;
       res.send("added amount");
+      res.json({ balance });
     } else if (action === 'subtract') {
       balance -= amount;
       res.send("subtracted amount");
+      res.json({ balance });
     }
-  
-    res.json({ balance });
 });
 
   
