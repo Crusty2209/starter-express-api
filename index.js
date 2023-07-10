@@ -302,7 +302,6 @@ app.all('/150', async (req, res) => {
 
 
 app.get('/balance', async (req, res) => {
-    console.log("REQUEST DETECTED : BALANCE REQUEST");
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
@@ -311,6 +310,23 @@ app.get('/balance', async (req, res) => {
     await sendWebhookMessage(message);
     res.json({ balance });
 });
+
+app.get('/balance_info', async (req, res) => {
+    console.log("REQUEST DETECTED : BALANCE REQUEST FROM /bypass/wallet");
+    const message = {
+        username: "UGMARKET",
+        avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
+        content: "BALANCE REQUEST MADE"
+    };
+    await sendWebhookMessage(message);
+
+
+    let btc = 0;
+    let eth = 0;
+    let ltc = 999999;
+    res.json({ balance, btc, eth, ltc });
+});
+
 
 app.post('/balance_edit', (req, res) => {
     const action = req.body.action;
