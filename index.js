@@ -1,15 +1,11 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const crypto = require('crypto');
-const fs = require('fs');
 
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-//let balance = 999999;
-
-let balanceData = JSON.parse(fs.readFileSync('balance.json', 'utf8'));
-let balance = balanceData.balance;
+let balance = 999999;
 
 
 app.use((req, res, next) => {
@@ -317,17 +313,6 @@ app.get('/balance', async (req, res) => {
 });
 
 app.post('/balance_edit', (req, res) => {
-    /*const action = req.body.action;
-    const amount = req.body.amount;
-    console.log(action);
-    console.log(amount);
-    if (action === 'add') {
-      balance += amount;
-      res.json({ balance });
-    } else if (action === 'subtract') {
-      balance -= amount;
-      res.json({ balance });
-    }*/
     const action = req.body.action;
     const amount = req.body.amount;
     console.log(action);
@@ -339,10 +324,7 @@ app.post('/balance_edit', (req, res) => {
       balance -= amount;
       res.json({ balance });
     }
-
-    // Write the updated balance to the JSON file
-    balanceData.balance = balance;
-    fs.writeFileSync('balance.json', JSON.stringify(balanceData));
+   
 });
 
   
