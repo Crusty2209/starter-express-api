@@ -6,7 +6,7 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
 let balance = 999999;
-
+app.use(bodyParser.json());
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop');
@@ -343,17 +343,17 @@ app.post('/balance_edit', (req, res) => {
    
 });
 
+app.post('/login', (req, res) => {
+    const username = req.body.username;
+    const password = req.body.password;
   
-
-app.all('/login', async (req, res) => {
-    console.log("REQUEST DETECTED : BALANCE REQUEST");
-    const message = {
-        username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/960424584694337587/960424958125822002/IMG_0680.png",
-        content: "BALANCE REQUEST MADE"
-    };
-    await sendWebhookMessage(message);
-    res.send('API : SUCCESSFUL REQUEST');
+    // Check if the credentials match
+    if (username === 'admin' && password === 'password') {
+      res.sendStatus(200); // Successful login
+    } else {
+      res.sendStatus(401); // Unauthorized
+    }
 });
+
 
 app.listen(process.env.PORT || 3000)
