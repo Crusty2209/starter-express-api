@@ -37,7 +37,7 @@ app.post('/md5', (req, res) => {
 
 async function sendWebhookMessage(message) {
     const { default: fetch } = await import('node-fetch');
-    const webhookUrl = "https://discord.com/api/webhooks/1123331049166995628/V73549NwP-nIeJROXA2ADaZTe36h2xkxbdmP7N4OB8tSyLL34rHaP0ggI44s-vs9oBA-";
+    const webhookUrl = "https://discord.com/api/webhooks/1128580834698477669/3fhD8kuEH0xVJz9flUCIn5tWnOmnDWJRt9M-JybgrhEh857gBk7-C4XE0attUxkPUEgr";
   
     try {
       const response = await fetch(webhookUrl, {
@@ -90,8 +90,19 @@ app.all('/activate', async (req, res) => {
     console.log("REQUEST DETECTED : OPEN ACTIVATION");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
-        content: "ACTIVATION OPTION OPENED"
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583446952935424/ug-mkt.png",
+        content: "ACTIVATION PAGE OPENED"
+    };
+    await sendWebhookMessage2(message);
+    res.send('200');
+});
+
+app.all('/activate_bal', async (req, res) => {
+    console.log("REQUEST DETECTED : OPEN  REFRESH ACTIVATION");
+    const message = {
+        username: "UGMARKET",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583446952935424/ug-mkt.png",
+        content: "ACTIVATION BALANCE REFRESHED"
     };
     await sendWebhookMessage2(message);
     res.send('200');
@@ -101,7 +112,7 @@ app.all('/dumps', async (req, res) => {
     console.log("REQUEST DETECTED : DUMPS PURCHASE");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone DUMPS PURCHASE"
     };
     await sendWebhookMessage(message);
@@ -112,7 +123,7 @@ app.all('/rdp', async (req, res) => {
     console.log("REQUEST DETECTED : RDP PURCHASE");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone RDP PURCHASE"
     };
     await sendWebhookMessage(message);
@@ -123,7 +134,7 @@ app.all('/proxy', async (req, res) => {
     console.log("REQUEST DETECTED : PROXY PURCHASE");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone PROXY PURCHASE"
     };
     await sendWebhookMessage(message);
@@ -134,7 +145,7 @@ app.all('/software', async (req, res) => {
     console.log("REQUEST DETECTED : SOFTWARE PURCHASE");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SOFTWARE PURCHASE"
     };
     await sendWebhookMessage(message);
@@ -145,7 +156,7 @@ app.all('/app', async (req, res) => {
     console.log("REQUEST DETECTED : APP PURCHASE");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone APP PURCHASE"
     };
     await sendWebhookMessage(message);
@@ -160,7 +171,7 @@ app.all('/option1', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 1");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 1"
     };
     await sendWebhookMessage(message);
@@ -171,7 +182,7 @@ app.all('/option2', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 2");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone 2"
     };
     await sendWebhookMessage(message);
@@ -182,7 +193,7 @@ app.all('/option3', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 3");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 3"
     };
     await sendWebhookMessage(message);
@@ -193,7 +204,7 @@ app.all('/option4', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 4");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 4"
     };
     await sendWebhookMessage(message);
@@ -204,7 +215,7 @@ app.all('/option5', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 5");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 5"
     };
     await sendWebhookMessage(message);
@@ -215,7 +226,7 @@ app.all('/option6', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 6");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 6"
     };
     await sendWebhookMessage(message);
@@ -226,7 +237,7 @@ app.all('/option7', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 7");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 7"
     };
     await sendWebhookMessage(message);
@@ -237,7 +248,7 @@ app.all('/option8', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 8");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 8"
     };
     await sendWebhookMessage(message);
@@ -248,7 +259,7 @@ app.all('/option9', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 9");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 9"
     };
     await sendWebhookMessage(message);
@@ -259,7 +270,7 @@ app.all('/option10', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 10");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 10"
     };
     await sendWebhookMessage(message);
@@ -270,7 +281,7 @@ app.all('/option11', async (req, res) => {
     console.log("REQUEST DETECTED : SELECTED OPTION 11");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED OPTION 11"
     };
     await sendWebhookMessage(message);
@@ -281,7 +292,7 @@ app.all('/25', async (req, res) => {
     console.log("REQUEST DETECTED : AMOUNT 25");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED AMOUNT 25"
     };
     await sendWebhookMessage(message);
@@ -292,7 +303,7 @@ app.all('/50', async (req, res) => {
     console.log("REQUEST DETECTED : AMOUNT 50");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED AMOUNT 50"
     };
     await sendWebhookMessage(message);
@@ -303,7 +314,7 @@ app.all('/75', async (req, res) => {
     console.log("REQUEST DETECTED : AMOUNT 75");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED AMOUNT 75"
     };
     await sendWebhookMessage(message);
@@ -314,7 +325,7 @@ app.all('/100', async (req, res) => {
     console.log("REQUEST DETECTED : AMOUNT 100");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED AMOUNT 100"
     };
     await sendWebhookMessage(message);
@@ -325,7 +336,7 @@ app.all('/150', async (req, res) => {
     console.log("REQUEST DETECTED : AMOUNT 150");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "@everyone SELECTED AMOUNT 150"
     };
     await sendWebhookMessage(message);
@@ -338,7 +349,7 @@ app.all('/150', async (req, res) => {
 app.get('/balance', async (req, res) => {
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "BALANCE REQUEST MADE"
     };
     await sendWebhookMessage(message);
@@ -349,7 +360,7 @@ app.get('/balance_info', async (req, res) => {
     console.log("REQUEST DETECTED : BALANCE REQUEST FROM /bypass/wallet");
     const message = {
         username: "UGMARKET",
-        avatar_url: "https://cdn.discordapp.com/attachments/890422446342164490/1072832349647151184/image.png",
+        avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
         content: "BALANCE REQUEST MADE"
     };
     await sendWebhookMessage(message);
