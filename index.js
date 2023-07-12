@@ -5,7 +5,7 @@ const crypto = require('crypto');
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 
-let balance = 999999;
+let balance = 233.90;
 app.use(bodyParser.json());
 
 app.use((req, res, next) => {
