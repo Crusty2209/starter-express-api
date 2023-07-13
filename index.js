@@ -27,9 +27,9 @@ app.use(session({
 let balance = 233.90;
 app.use(bodyParser.json());
 
-
+//https://www.ugmarket.shop
 app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop');
+    res.setHeader('Access-Control-Allow-Origin', 'https://ug-mkt-live.glitch.me');
     res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();
