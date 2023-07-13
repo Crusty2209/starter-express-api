@@ -7,6 +7,18 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
+
+//https://www.ugmarket.shop
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', 'https://ug-mkt-live.glitch.me');
+    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+    next();
+});
+
+app.use(bodyParser.json());
+
+
 const generateRandomSecret = () => {
   return crypto.randomBytes(64).toString('hex');
 };
@@ -25,15 +37,8 @@ app.use(session({
 
 
 let balance = 233.90;
-app.use(bodyParser.json());
 
-//https://www.ugmarket.shop
-app.use((req, res, next) => {
-    res.setHeader('Access-Control-Allow-Origin', 'https://ug-mkt-live.glitch.me');
-    res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
-    res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-    next();
-});
+
 
 function sanitizeInput(inputValue) {
     // Basic input sanitization to prevent SQL injection
