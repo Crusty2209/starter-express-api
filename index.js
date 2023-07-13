@@ -1,12 +1,32 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const session = require('express-session');
 const crypto = require('crypto');
 
 const app = express();
+
 app.use(bodyParser.urlencoded({ extended: true }));
+
+const generateRandomSecret = () => {
+  return crypto.randomBytes(64).toString('hex');
+};
+const secretKey = generateRandomSecret();
+app.use(express.json());
+app.use(session({
+    secret: secretKey,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+      secure: true, // Enable this if your site uses HTTPS
+      httpOnly: true, // Prevent client-side JavaScript access to the session cookie
+      maxAge: 7200000 // Set the cookie expiration time in milliseconds (e.g., 2 hour)
+    }
+  }));
+
 
 let balance = 233.90;
 app.use(bodyParser.json());
+
 
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop');
@@ -34,6 +54,17 @@ app.post('/md5', (req, res) => {
   
     res.send(md5Hash);
 });
+
+function getUserByUsername(username) {
+  if (username === "admin"){
+    const user = {
+        username: 'admin',
+        password: 'password'
+    }
+  } else{
+    return error;
+  }
+};
 
 async function sendWebhookMessage(message) {
     const { default: fetch } = await import('node-fetch');
@@ -389,7 +420,7 @@ app.post('/balance_edit', (req, res) => {
 });
 
 app.post('/login', (req, res) => {
-    const username = req.body.username;
+    /*const username = req.body.username;
     const password = req.body.password;
   
     // Check if the credentials match
@@ -397,7 +428,23 @@ app.post('/login', (req, res) => {
       res.sendStatus(200); // Successful login
     } else {
       res.sendStatus(401); // Unauthorized
+    } */
+
+    const { username, password } = req.body;
+
+    // Assuming you have a user database or storage mechanism
+    const user = getUserByUsername(username);
+
+    if (!user || user.password !== password) {
+      // Invalid credentials
+      return res.status(401).json({ error: 'Invalid username or password' });
     }
+
+    // Create a session for the user
+    req.session.userId = user.id;
+
+    // Return a success response
+    res.json({ message: 'Login successful' });
 });
 
 
