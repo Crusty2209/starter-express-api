@@ -66,6 +66,7 @@ function getUserByUsername(username) {
         username: 'admin',
         password: 'password'
     }
+    return user;
   } else{
     return error;
   }
