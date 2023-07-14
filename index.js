@@ -2,11 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const crypto = require('crypto');
-const { Web3 } = require('web3');
+const Web3 = require('web3');
 const bitcoin = require('bitcoinlib');
 
 const app = express();
-const web3 = new Web3('https://mainnet.infura.io/v3/fb43b5a5ec81406c90cbbeb12cda191a');
+const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/fb43b5a5ec81406c90cbbeb12cda191a'));
 
 
 //https://www.ugmarket.shop
