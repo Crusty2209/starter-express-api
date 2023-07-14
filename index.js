@@ -3,7 +3,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const crypto = require('crypto');
 //const Web3 = require('web3');
-const bitcoin = require('bitcoinlib');
+const bitcoin = require('bitcoinjs-lib');
 
 const app = express();
 //const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/fb43b5a5ec81406c90cbbeb12cda191a'));
@@ -58,7 +58,7 @@ app.get('/eth/balance/:walletAddress', async (req, res) => {
     } catch (error) {
       res.status(500).json({ error: 'Failed to retrieve Ethereum balance.' });
     }
-});*/
+});
 
 app.get('/crypto/balance/:currency/:walletAddress', async (req, res) => {
     const currency = req.params.currency.toLowerCase();
@@ -79,6 +79,35 @@ app.get('/crypto/balance/:currency/:walletAddress', async (req, res) => {
     } catch (error) {
       res.status(500).json({ error: 'Failed to retrieve wallet balance.' });
     }
+});*/
+
+app.get('/crypto/balance/:currency/:walletAddress', async (req, res) => {
+    const currency = req.params.currency.toLowerCase();
+    const walletAddress = req.params.walletAddress;
+    try {
+      let network;
+      if (currency === 'btc') {
+        network = bitcoin.networks.bitcoin;
+      } else if (currency === 'ltc') {
+        network = bitcoin.networks.litecoin;
+      } else {
+        return res.status(400).json({ error: 'Invalid currency specified.' });
+      }
+  
+      const publicKey = bitcoin.address.toOutputScript(walletAddress, network);
+      const { data } = await bitcoin.blockchain.chain.getChainTips();
+      const chain = data[0].hash;
+      const response = await bitcoin.blockchain.chain.getUtxo(publicKey, chain);
+      const balance = response.reduce((acc, utxo) => acc + utxo.value, 0);
+      res.json({ balance: balance });
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to retrieve wallet balance.' });
+    }
+  });
+  
+  // Start the server
+  app.listen(3000, () => {
+    console.log('Server is running on port 3000');
 });
 
 
