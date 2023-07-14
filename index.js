@@ -450,7 +450,7 @@ app.post('/login', (req, res) => {
     req.session.userId = user.id;
 
     // Return a success response
-    res.json({ message: 'Login successful' });
+    res.json({ token: session });
 });
 
 
