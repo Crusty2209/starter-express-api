@@ -5,8 +5,6 @@ const crypto = require('crypto');
 
 const app = express();
 
-app.use(bodyParser.urlencoded({ extended: true }));
-
 
 //https://www.ugmarket.shop
 app.use((req, res, next) => {
@@ -15,6 +13,8 @@ app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
     next();
 });
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(bodyParser.json());
 
