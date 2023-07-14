@@ -33,7 +33,7 @@ app.use(session({
       httpOnly: true, // Prevent client-side JavaScript access to the session cookie
       maxAge: 7200000 // Set the cookie expiration time in milliseconds (e.g., 2 hour)
     }
-  }));
+}));
 
 
 let balance = 233.90;
