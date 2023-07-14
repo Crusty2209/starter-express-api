@@ -434,8 +434,8 @@ app.post('/login', (req, res) => {
       res.sendStatus(200); // Successful login
     } else {
       res.sendStatus(401); // Unauthorized
-    } */
-
+    } 
+----
     const { username, password } = req.body;
 
     // Assuming you have a user database or storage mechanism
@@ -449,8 +449,22 @@ app.post('/login', (req, res) => {
     // Create a session for the user
     req.session.userId = user.id;
 
+    generateRandomSecret();
     // Return a success response
-    res.json({ token: secretKey });
+    res.json({ token: secretKey });*/
+    const { username, password } = req.body;
+
+  const user = getUserByUsername(username);
+
+  if (!user || user.password !== password) {
+    return res.status(401).json({ error: 'Invalid username or password' });
+  }
+
+  req.session.userId = user.id;
+
+  secretKey = generateRandomSecret(); // Update the secret key
+
+  res.json({ token: secretKey });
 });
 
 
