@@ -17,10 +17,12 @@
   },
   "homepage": "https://github.com/cyclic-software/starter-express-api#readme",
   "dependencies": {
+    "bitcoinlib": "^1.0.2",
     "crypto": "^1.0.1",
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "node-fetch": "^3.3.1",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.6",
+    "web3": "^4.0.3"
   }
 }

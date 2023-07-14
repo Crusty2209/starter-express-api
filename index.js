@@ -2,8 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const crypto = require('crypto');
+const Web3 = require('web3');
+const bitcoin = require('bitcoinlib');
 
 const app = express();
+const web3 = new Web3('https://mainnet.infura.io/v3/fb43b5a5ec81406c90cbbeb12cda191a');
 
 
 //https://www.ugmarket.shop
@@ -34,6 +37,54 @@ app.use(session({
       maxAge: 7200000 // Set the cookie expiration time in milliseconds (e.g., 2 hour)
     }
 }));
+
+
+
+
+
+
+
+
+
+
+
+
+
+app.get('/eth/balance/:walletAddress', async (req, res) => {
+    const walletAddress = req.params.walletAddress;
+    try {
+      const balance = await web3.eth.getBalance(walletAddress);
+      res.json({ balance: balance });
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to retrieve Ethereum balance.' });
+    }
+});
+
+app.get('/crypto/balance/:currency/:walletAddress', async (req, res) => {
+    const currency = req.params.currency.toLowerCase();
+    const walletAddress = req.params.walletAddress;
+    try {
+      let network;
+      if (currency === 'btc') {
+        network = bitcoin.networks.bitcoin;
+      } else if (currency === 'ltc') {
+        network = bitcoin.networks.litecoin;
+      } else {
+        return res.status(400).json({ error: 'Invalid currency specified.' });
+      }
+  
+      const client = new bitcoin.Client({ network: network });
+      const balance = await client.getBalance(walletAddress);
+      res.json({ balance: balance });
+    } catch (error) {
+      res.status(500).json({ error: 'Failed to retrieve wallet balance.' });
+    }
+});
+
+
+
+
+
 
 
 let balance = 233.90;
