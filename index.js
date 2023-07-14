@@ -103,11 +103,6 @@ app.get('/crypto/balance/:currency/:walletAddress', async (req, res) => {
     } catch (error) {
       res.status(500).json({ error: 'Failed to retrieve wallet balance.' });
     }
-  });
-  
-  // Start the server
-  app.listen(3000, () => {
-    console.log('Server is running on port 3000');
 });
 
 
