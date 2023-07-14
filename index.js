@@ -2,11 +2,11 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const crypto = require('crypto');
-const Web3 = require('web3');
+//const Web3 = require('web3');
 const bitcoin = require('bitcoinlib');
 
 const app = express();
-const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/fb43b5a5ec81406c90cbbeb12cda191a'));
+//const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/fb43b5a5ec81406c90cbbeb12cda191a'));
 
 
 //https://www.ugmarket.shop
@@ -48,7 +48,7 @@ app.use(session({
 
 
 
-
+/*
 
 app.get('/eth/balance/:walletAddress', async (req, res) => {
     const walletAddress = req.params.walletAddress;
@@ -58,7 +58,7 @@ app.get('/eth/balance/:walletAddress', async (req, res) => {
     } catch (error) {
       res.status(500).json({ error: 'Failed to retrieve Ethereum balance.' });
     }
-});
+});*/
 
 app.get('/crypto/balance/:currency/:walletAddress', async (req, res) => {
     const currency = req.params.currency.toLowerCase();
