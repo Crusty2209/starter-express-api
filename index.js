@@ -28,7 +28,7 @@ const generateRandomSecret = () => {
 const secretKey = generateRandomSecret();
 app.use(express.json());
 app.use(session({
-    secret: secretKey,
+    secret: "4e0a889fed14777bf9c365b64e7f8fc7047d18ef4d1614487b1e3fb2e952b3db",
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -555,8 +555,8 @@ app.post('/login2', (req, res) => {
   // Check if the provided credentials match the valid credentials
   if (username === validCredentials.username && password === validCredentials.password) {
     // Generate a session cookie (replace with your own session management mechanism)
-    const sessionCookie = 'your-session-cookie-value';
-
+    //const sessionCookie = '4e0a889fed14777bf9c365b64e7f8fc7047d18ef4d1614487b1e3fb2e952b3db';
+    const sessionCooke = session;
     // Set the session cookie in the response
     res.cookie('session', sessionCookie, { httpOnly: true });
 
