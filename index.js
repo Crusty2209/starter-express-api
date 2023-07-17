@@ -560,6 +560,7 @@ app.post('/login2', (req, res) => {
     // Set the session cookie in the response
     res.cookie('session', sessionCookie, { httpOnly: true });
 
+    document.cookie = `session=${sessionCookie}; path=/`;
     // Respond with a success message
     res.json({ message: 'Login successful', 'session': sessionCookie});
   } else {
