@@ -527,7 +527,7 @@ app.post('/login', (req, res) => {
     generateRandomSecret();
     // Return a success response
     res.json({ token: secretKey });*/
-    const { username, password } = req.body;
+  const { username, password } = req.body;
 
   const user = getUserByUsername(username);
 
@@ -541,6 +541,37 @@ app.post('/login', (req, res) => {
 
   res.json({ token: secretKey });
 });
+
+// Mock user credentials (replace with your own authentication mechanism)
+const validCredentials = {
+  username: 'admin',
+  password: 'password',
+};
+
+// Login endpoint
+app.post('/login2', (req, res) => {
+  const { username, password } = req.body;
+
+  // Check if the provided credentials match the valid credentials
+  if (username === validCredentials.username && password === validCredentials.password) {
+    // Generate a session cookie (replace with your own session management mechanism)
+    const sessionCookie = 'your-session-cookie-value';
+
+    // Set the session cookie in the response
+    res.cookie('session', sessionCookie, { httpOnly: true });
+
+    // Respond with a success message
+    res.json({ message: 'Login successful' });
+  } else {
+    // If credentials are incorrect, respond with an error message
+    res.status(401).json({ error: 'Invalid credentials' });
+  }
+});
+
+
+
+
+
 
 
 app.listen(process.env.PORT || 3000)
