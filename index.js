@@ -561,7 +561,7 @@ app.post('/login2', (req, res) => {
     res.cookie('session', sessionCookie, { httpOnly: true });
 
     // Respond with a success message
-    res.json({ message: 'Login successful' });
+    res.json({ message: 'Login successful', 'session': sessionCookie});
   } else {
     // If credentials are incorrect, respond with an error message
     res.status(401).json({ error: 'Invalid credentials' });
