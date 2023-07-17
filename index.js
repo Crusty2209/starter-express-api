@@ -556,7 +556,7 @@ app.post('/login2', (req, res) => {
   if (username === validCredentials.username && password === validCredentials.password) {
     // Generate a session cookie (replace with your own session management mechanism)
     //const sessionCookie = '4e0a889fed14777bf9c365b64e7f8fc7047d18ef4d1614487b1e3fb2e952b3db';
-    const sessionCooke = session;
+    const sessionCookie = session;
     // Set the session cookie in the response
     res.cookie('session', sessionCookie, { httpOnly: true });
 
