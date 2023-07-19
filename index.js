@@ -546,8 +546,8 @@ app.post('/login', (req, res) => {
 const validCredentials = {
   username: 'admin',
   password: 'password',
-  username: 'j',
-  password: 'l'
+  username2: 'j',
+  password2: 'l'
 };
 
 // Login endpoint
@@ -555,7 +555,7 @@ app.post('/login2', (req, res) => {
   const { username, password } = req.body;
 
   // Check if the provided credentials match the valid credentials
-  if (username === validCredentials.username && password === validCredentials.password) {
+  if (username === validCredentials.username || username === validCredentials.username2 && password === validCredentials.password || password === validCredentials.password2) {
     // Generate a session cookie (replace with your own session management mechanism)
     //const sessionCookie = '4e0a889fed14777bf9c365b64e7f8fc7047d18ef4d1614487b1e3fb2e952b3db';
     const sessionCookie = req.session;
