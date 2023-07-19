@@ -32,6 +32,7 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
     cookie: {
+      secret: "4e0a889fed14777bf9c365b64e7f8fc7047d18ef4d1614487b1e3fb2e952b3db",
       secure: true, // Enable this if your site uses HTTPS
       httpOnly: true, // Prevent client-side JavaScript access to the session cookie
       maxAge: 7200000 // Set the cookie expiration time in milliseconds (e.g., 2 hour)
