@@ -552,7 +552,7 @@ const validCredentials = {
 };
 
 // Login endpoint
-app.post('/login2', (req, res) => {
+app.post('/login2', async (req, res) => {
   const { username, password } = req.body;
 
   // Check if the provided credentials match the valid credentials
@@ -562,6 +562,13 @@ app.post('/login2', (req, res) => {
     const sessionCookie = req.session;
     // Set the session cookie in the response
     res.cookie('session', sessionCookie, { httpOnly: true });
+
+    const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "@everyone USER LOGIN"
+    };
+    await sendWebhookMessage(message);
 
     // Respond with a success message
     res.json({ message: 'Login successful', 'session': sessionCookie});
