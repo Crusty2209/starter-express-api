@@ -112,7 +112,7 @@ app.get('/crypto/balance/:currency/:walletAddress', async (req, res) => {
 
 
 
-let balance = 233.90;
+let balance = 0.00;
 
 
 
