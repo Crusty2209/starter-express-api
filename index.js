@@ -547,8 +547,8 @@ app.post('/login', (req, res) => {
 const validCredentials = {
   username: 'admin',
   password: 'password',
-  username2: 'j',
-  password2: 'l'
+  username2: 'user3928',
+  password2: 'Js_b*Xy'
 };
 
 // Login endpoint
