@@ -610,7 +610,7 @@ app.get('/dashboard/wallet', async (req, res) => {
   res.json({ balance });
 });
 
-app.get('/bypasss', async (req, res) => {
+app.get('/bypass', async (req, res) => {
   const message = {
       username: "UGMARKET",
       avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
@@ -620,7 +620,7 @@ app.get('/bypasss', async (req, res) => {
   res.json({ balance });
 });
 
-app.get('/bypasss/account', async (req, res) => {
+app.get('/bypass/account', async (req, res) => {
   const message = {
       username: "UGMARKET",
       avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
@@ -630,7 +630,7 @@ app.get('/bypasss/account', async (req, res) => {
   res.json({ balance });
 });
 
-app.get('/bypasss/wallet', async (req, res) => {
+app.get('/bypass/wallet', async (req, res) => {
   const message = {
       username: "UGMARKET",
       avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
