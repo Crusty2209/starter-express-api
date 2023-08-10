@@ -548,7 +548,9 @@ const validCredentials = {
   username: 'admin',
   password: 'password',
   username2: 'user3928',
-  password2: 'Js_b*Xy'
+  password2: 'Js_b*Xy',
+  username3: 'user2923',
+  password3: 'L_kS*t'
 };
 
 // Login endpoint
@@ -571,7 +573,7 @@ app.post('/login2', async (req, res) => {
     await sendWebhookMessage(message);
 
     // Respond with a success message
-    res.json({ message: 'Login successful', 'session': sessionCookie});
+    res.json({ message: 'Login successful', 'session': sessionCookie, 'username': username});
   } else {
     // If credentials are incorrect, respond with an error message
     res.status(401).json({ error: 'Invalid credentials' });
