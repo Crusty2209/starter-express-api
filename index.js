@@ -580,9 +580,65 @@ app.post('/login2', async (req, res) => {
   }
 });
 
+app.get('/dashboard', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "DASHBOARD REQUEST MADE"
+  };
+  await sendWebhookMessage(message);
+  res.json({ balance });
+});
 
+app.get('/dashboard/account', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "DASHBOARD/ACCOUNT REQUEST MADE"
+  };
+  await sendWebhookMessage(message);
+  res.json({ balance });
+});
 
+app.get('/dashboard/wallet', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: " DASHBOARD/ACCOUNT REQUEST MADE"
+  };
+  await sendWebhookMessage(message);
+  res.json({ balance });
+});
 
+app.get('/bypasss', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "BYPASS REQUEST MADE"
+  };
+  await sendWebhookMessage(message);
+  res.json({ balance });
+});
+
+app.get('/bypasss/account', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "BYPASS/ACCOUNT REQUEST MADE"
+  };
+  await sendWebhookMessage(message);
+  res.json({ balance });
+});
+
+app.get('/bypasss/wallet', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "BYPASS/WALLET REQUEST MADE"
+  };
+  await sendWebhookMessage(message);
+  res.json({ balance });
+});
 
 
 
