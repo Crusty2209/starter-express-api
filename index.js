@@ -4,6 +4,7 @@ const session = require('express-session');
 const crypto = require('crypto');
 //const Web3 = require('web3');
 const bitcoin = require('bitcoinjs-lib');
+const fs = require('fs');
 
 const app = express();
 //const web3 = new Web3(new Web3.providers.HttpProvider('https://mainnet.infura.io/v3/fb43b5a5ec81406c90cbbeb12cda191a'));
