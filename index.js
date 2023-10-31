@@ -216,7 +216,7 @@ app.get('/activate', async (req, res) => {
         content: "ACTIVATION PAGE OPENED"
     };
     await sendWebhookMessage2(message);
-    res.send('200');
+    res.send(`200 ${clientIP}`);
 });
 
 app.all('/activate_bal', async (req, res) => {
