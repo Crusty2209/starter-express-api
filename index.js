@@ -205,6 +205,7 @@ app.all('/', (req, res) => {
 
 app.all('/activate', async (req, res) => {
     console.log("REQUEST DETECTED : OPEN ACTIVATION");
+    console.log(req);
     const message = {
         username: "UGMARKET",
         avatar_url: "https://cdn.discordapp.com/attachments/1128583298562658445/1128583446952935424/ug-mkt.png",
