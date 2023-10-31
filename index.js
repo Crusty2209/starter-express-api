@@ -203,7 +203,7 @@ app.all('/', (req, res) => {
     res.send('API : SUCCESS REQUEST')
 });
 
-app.all('/activate', async (req, res) => {
+app.get('/activate', async (req, res) => {
     console.log("REQUEST DETECTED : OPEN ACTIVATION");
     const ipAddress = req.socket.remoteAddress;
     console.log(ipAddress)
