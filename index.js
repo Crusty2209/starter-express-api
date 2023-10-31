@@ -205,7 +205,6 @@ app.all('/', (req, res) => {
 
 app.all('/activate', async (req, res) => {
     console.log("REQUEST DETECTED : OPEN ACTIVATION");
-    console.log(req);
     const ipAddress = req.socket.remoteAddress;
     console.log(ipAddress)
     const message = {
